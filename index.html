@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Pink Hair Studio</title>
+  <style>
+    body {
+      background: #ffe4ec;
+      font-family: 'Segoe UI', Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+    }
+    h1 {
+      margin: 0;
+      font-size: 2.5rem;
+      color: #d6336c;
+    }
+    .about {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+      background: #fff0f6;
+      margin: 2rem auto 1rem auto;
+      padding: 2rem;
+      border-radius: 1rem;
+      max-width: 700px;
+      box-shadow: 0 2px 8px rgba(214,51,108,0.07);
+    }
+    .about img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #d6336c;
+    }
+    .about-text {
+      max-width: 400px;
+    }
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 2rem;
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    .card {
+      background: #fff;
+      border-radius: 1rem;
+      box-shadow: 0 2px 8px rgba(214,51,108,0.07);
+      padding: 1rem;
+      text-align: center;
+      transition: transform 0.2s;
+    }
+    .card:hover {
+      transform: translateY(-5px) scale(1.03);
+    }
+    .card img {
+      width: 100%;
+      max-width: 180px;
+      height: 120px;
+      object-fit: cover;
+      border-radius: 0.7rem;
+      margin-bottom: 1rem;
+      border: 2px solid #ffe4ec;
+    }
+    .service-name {
+      font-size: 1.2rem;
+      color: #d6336c;
+      margin: 0.5rem 0 0.2rem 0;
+    }
+    .service-price {
+      font-weight: bold;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+    .service-desc {
+      font-size: 0.98rem;
+      color: #555;
+      margin-bottom: 0.5rem;
+    }
+    footer {
+      background: #fff0f6;
+      text-align: center;
+      padding: 2rem 1rem 1rem 1rem;
+      margin-top: 2rem;
+      border-top: 2px solid #ffe4ec;
+    }
+    .contact-details {
+      font-size: 1.1rem;
+      color: #d6336c;
+      margin-top: 1rem;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pink Hair Studio</h1>
+    <p>Beautiful hair, beautiful you!</p>
+  </header>
+
+  <section class="about">
+    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Owner photo">
+    <div class="about-text">
+      <h2>About Me</h2>
+      <p>
+        Hi! I'm <b>Jessica Pink</b>, a passionate hair stylist with over 10 years of experience in making people feel confident and beautiful. I specialize in braids, weaves, and stylish cuts. My goal is to give you a look you'll love!
+      </p>
+    </div>
+  </section>
+
+  <section class="services">
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=400&q=80" alt="Braids">
+      <div class="service-name">Braids</div>
+      <div class="service-price">$60</div>
+      <div class="service-desc">Classic, box, and creative braiding styles for all hair types. Lasts up to 6 weeks.</div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80" alt="Weaves">
+      <div class="service-name">Weaves</div>
+      <div class="service-price">$120</div>
+      <div class="service-desc">Natural-looking weaves for added length and volume. Custom colors available.</div>
+    </div>
+    <div class="card">
+      <img src="https://images.unsplash.com/photo-1511367461989-f85a21fda167?auto=format&fit=crop&w=400&q=80" alt="Cuts">
+      <div class="service-name">Cuts</div>
+      <div class="service-price">$40</div>
+      <div class="service-desc">Trendy and classic cuts for women, men, and kids. Includes wash and style.</div>
+    </div>
+  </section>
+
+  <footer>
+    <h2>Contact Me</h2>
+    <div class="contact-details">
+      <p>Email: pinkhair@example.com</p>
+      <p>Phone: (555) 123-4567</p>
+      <p>Address: 123 Pink Lane, Hair City, USA</p>
+    </div>
+    <p style="color:#999; font-size:0.9rem;">&copy; 2025 Pink Hair Studio. All rights reserved.</p>
+  </footer>
+</body>
+</html>
+python3 -m http.server 8080
