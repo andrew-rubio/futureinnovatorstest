@@ -123,6 +123,13 @@
       <div class="service-price">$60</div>
       <div class="service-desc">Classic, box, and creative braiding styles for all hair types. Lasts up to 6 weeks.</div>
     </div>
+      <section class="weather" id="weather-section">
+        <div id="weather-container" style="max-width:700px;margin:1rem auto 0 auto;padding:1rem 2rem;background:#fff0f6;border-radius:1rem;box-shadow:0 2px 8px rgba(214,51,108,0.07);text-align:center;">
+          <h2 style="color:#d6336c;">London Weather Forecast</h2>
+          <div id="weather-loading">Loading weather...</div>
+          <div id="weather-content" style="display:none;"></div>
+        </div>
+      </section>
     <div class="card">
       <img src="https://images.unsplash.com/photo-1529626455594-4ff0802cfb7e?auto=format&fit=crop&w=400&q=80" alt="Weaves">
       <div class="service-name">Weaves</div>
@@ -146,6 +153,40 @@
     </div>
     <p style="color:#999; font-size:0.9rem;">&copy; 2025 Pink Hair Studio. All rights reserved.</p>
   </footer>
-</body>
-</html>
+  <script>
+  // Weather forecast for London, UK using OpenWeatherMap API
+  const apiKey = "d2e685b51e596b414db3cf6ace7d00ee";
+  const city = "London,uk";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
+  fetch(url)
+    .then(response => response.json())
+    .then(data => {
+      const weatherDiv = document.getElementById('weather-content');
+      const loadingDiv = document.getElementById('weather-loading');
+      if (data.cod === 200) {
+        const temp = data.main.temp;
+        const desc = data.weather[0].description;
+        const icon = data.weather[0].icon;
+        const humidity = data.main.humidity;
+        const wind = data.wind.speed;
+        weatherDiv.innerHTML = `
+          <img src='https://openweathermap.org/img/wn/${icon}@2x.png' alt='Weather icon' style='vertical-align:middle;'>
+          <span style='font-size:1.3rem;color:#d6336c;'>${temp}&deg;C</span><br>
+          <span style='text-transform:capitalize;'>${desc}</span><br>
+          Humidity: ${humidity}%<br>
+          Wind: ${wind} m/s
+        `;
+        loadingDiv.style.display = 'none';
+        weatherDiv.style.display = 'block';
+      } else {
+        loadingDiv.textContent = "Weather data unavailable.";
+      }
+    })
+    .catch(() => {
+      document.getElementById('weather-loading').textContent = "Failed to load weather.";
+    });
+  </script>
+  </body>
+  </html>
 python3 -m http.server 8080
